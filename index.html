@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boolzap</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
@@ -12,7 +20,21 @@
       <div class="container">
         <div class="content-container">
           <div class="left-part">
-            <div class="my-profile"></div>
+            <div class="my-profile">
+              <div class="my-profile-left-part">
+                <img
+                  src="./assets/img/avatar_io.jpg"
+                  alt="My profile picture"
+                  class="my-profile-pic"
+                />
+                <span>Elisa</span>
+              </div>
+              <div class="my-profile-right-part">
+                <i class="fa-solid fa-circle-notch"></i>
+                <i class="fa-solid fa-message"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
             <div class="notice"></div>
             <div class="search-profile"></div>
             <div class="chats"></div>
@@ -25,6 +47,7 @@
         </div>
       </div>
     </div>
+
     <!-- Link Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!-- My link js -->
