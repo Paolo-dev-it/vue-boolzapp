@@ -59,15 +59,15 @@
               </div>
             </div>
             <!-- Sezione mie chats -->
-            <div class="chats">
+            <div class="chats" v-for="(name, index) in contacts">
               <div class="left-chats-part">
                 <img
-                  src="./assets/img/avatar_1.jpg"
+                  :src="'./assets/img/avatar' + contacts[index].avatar "
                   alt="My profile picture"
                   class="profile-pic-contacts"
                 />
                 <div class="left-chats-part-name">
-                  <span>Michele</span>
+                  <span>{{contacts[index].name}}</span>
                   <div>Ultimo messaggio inviato</div>
                 </div>
               </div>

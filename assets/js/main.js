@@ -4,7 +4,7 @@ var app = new Vue({
     contacts: [
       {
         name: "Michele",
-        avatar: "_1",
+        avatar: "_1.jpg",
         visible: true,
         messages: [
           {
@@ -26,7 +26,7 @@ var app = new Vue({
       },
       {
         name: "Fabio",
-        avatar: "_2",
+        avatar: "_2.jpg",
         visible: true,
         messages: [
           {
@@ -48,7 +48,7 @@ var app = new Vue({
       },
       {
         name: "Samuele",
-        avatar: "_3",
+        avatar: "_3.jpg",
         visible: true,
         messages: [
           {
@@ -70,7 +70,7 @@ var app = new Vue({
       },
       {
         name: "Alessandro B.",
-        avatar: "_4",
+        avatar: "_4.jpg",
         visible: true,
         messages: [
           {
@@ -87,7 +87,7 @@ var app = new Vue({
       },
       {
         name: "Alessandro L.",
-        avatar: "_5",
+        avatar: "_5.jpg",
         visible: true,
         messages: [
           {
@@ -104,7 +104,7 @@ var app = new Vue({
       },
       {
         name: "Claudia",
-        avatar: "_6",
+        avatar: "_6.jpg",
         visible: true,
         messages: [
           {
@@ -126,7 +126,7 @@ var app = new Vue({
       },
       {
         name: "Federico",
-        avatar: "_7",
+        avatar: "_7.jpg",
         visible: true,
         messages: [
           {
@@ -143,7 +143,7 @@ var app = new Vue({
       },
       {
         name: "Davide",
-        avatar: "_8",
+        avatar: "_8.jpg",
         visible: true,
         messages: [
           {
