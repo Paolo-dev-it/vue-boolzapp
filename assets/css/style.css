@@ -72,6 +72,10 @@ body {
   padding: 10px;
 }
 
+.chats:hover {
+  background-color: rgb(209, 200, 200);
+}
+
 .description {
   width: 100%;
   height: 10%;

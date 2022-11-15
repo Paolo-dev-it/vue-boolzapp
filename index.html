@@ -59,7 +59,11 @@
               </div>
             </div>
             <!-- Sezione mie chats -->
-            <div class="chats" v-for="(name, index) in contacts">
+            <div
+              class="chats"
+              v-for="(name, index) in contacts"
+              @click="chatSelector(element, index)"
+            >
               <div class="left-chats-part">
                 <img
                   :src="'./assets/img/avatar' + contacts[index].avatar "
@@ -81,12 +85,12 @@
             <div class="description">
               <div class="left-part-description">
                 <img
-                  src="./assets/img/avatar_1.jpg"
+                  :src="'./assets/img/avatar' + contacts[0].avatar"
                   alt="My profile picture"
                   class="profile-pic-contacts"
                 />
                 <div>
-                  <span>Michele</span>
+                  <span>{{contacts[0].name}}</span>
                   <div>Ultimo accesso oggi alle 12:00</div>
                 </div>
               </div>
@@ -101,13 +105,13 @@
               <div class="message-container">
                 <div class="right-container-msg">
                   <div class="message-left">
-                    <span>Hai portato a spasso la nonna?</span>
+                    <span>{{contacts[0].messages[0].message}}</span>
                     <div class="time-message">10:00</div>
                   </div>
                 </div>
                 <div class="left-container-msg">
                   <div class="message-right">
-                    <span>Certo papà</span>
+                    <span>{{contacts[0].messages[1].message}}</span>
                     <div class="time-message">10:00</div>
                   </div>
                 </div>

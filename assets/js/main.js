@@ -165,4 +165,7 @@ var app = new Vue({
       },
     ],
   },
+  currentUser: 0,
+
+  methods: {},
 });
