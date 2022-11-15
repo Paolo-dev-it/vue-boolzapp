@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  background: rgb(245, 245, 220);
+  background: linear-gradient(
+    0deg,
+    rgba(245, 245, 220, 1) 86%,
+    rgba(0, 140, 119, 1) 86%
+  );
+  display: flex;
+}
+
+.content-container {
+  width: 90vw;
+  height: 90vh;
+  background-color: white;
+  margin: auto;
+}
