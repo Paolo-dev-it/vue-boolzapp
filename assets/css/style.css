@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: sans-serif;
+}
+
 .container {
   height: 100vh;
   background: rgb(245, 245, 220);
@@ -99,6 +103,10 @@
   align-items: center;
 }
 
+.my-profile-left-part span {
+  margin-left: 10px;
+}
+
 .my-profile-pic {
   width: 50px;
   height: 50px;
@@ -109,7 +117,7 @@
   color: gray;
 }
 
-.my-profile-right-part i {
+.fa-solid {
   margin: 5px;
 }
 
@@ -154,6 +162,10 @@
 .left-part-description {
   display: flex;
   align-items: center;
+}
+
+.left-part-description > div {
+  margin-left: 15px;
 }
 
 .message-container {
