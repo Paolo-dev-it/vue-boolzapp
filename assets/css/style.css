@@ -20,4 +20,59 @@
   height: 90vh;
   background-color: white;
   margin: auto;
+  display: flex;
+}
+
+.left-part {
+  width: 35%;
+  height: 100%;
+  background-color: red;
+}
+
+.right-part {
+  width: 65%;
+  height: 100%;
+  background-color: green;
+}
+
+.my-profile {
+  width: 100%;
+  height: 10%;
+  background-color: rgb(124, 215, 124);
+}
+
+.notice {
+  width: 100%;
+  height: 12%;
+  background-color: rgb(135, 188, 135);
+}
+
+.search-profile {
+  width: 100%;
+  height: 5%;
+  background-color: rgb(34, 56, 34);
+}
+
+.chats {
+  width: 100%;
+  height: 73%;
+  background-color: rgb(14, 72, 14);
+}
+
+.description {
+  width: 100%;
+  height: 10%;
+  background-color: rgb(243, 255, 10);
+}
+
+.text-area {
+  width: 100%;
+  height: 80%;
+  background-color: rgb(194, 200, 63);
+}
+
+.new-message {
+  width: 100%;
+  height: 10%;
+  background-color: rgb(111, 114, 48);
 }
