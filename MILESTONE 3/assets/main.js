@@ -174,7 +174,7 @@ var app = new Vue({
     },
 
     newMessage() {
-      this.messages.push({
+      this.contacts[this.currentUser].messages.push({
         message: this.text,
         status: "sent",
       });
