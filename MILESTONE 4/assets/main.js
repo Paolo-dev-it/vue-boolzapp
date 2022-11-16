@@ -167,6 +167,7 @@ var app = new Vue({
     currentUser: 0,
     text: "",
     pcText: "",
+    nameSearch: "",
   },
 
   methods: {
@@ -187,6 +188,24 @@ var app = new Vue({
       this.contacts[this.currentUser].messages.push({
         message: "Ok",
         status: "received",
+      });
+    },
+
+    searchName() {
+      this.contacts.forEach((element, index) => {
+        if (this.nameSearch == "") {
+          this.contacts[index].visible = true;
+        } else {
+          if (
+            element.name.includes(this.nameSearch) ||
+            element.name.toLowerCase().includes(this.nameSearch) ||
+            element.name.toUpperCase().includes(this.nameSearch)
+          ) {
+            element.visible = true;
+          } else {
+            element.visible = false;
+          }
+        }
       });
     },
   },

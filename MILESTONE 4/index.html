@@ -53,6 +53,8 @@
               </div>
               <div class="input-search">
                 <input
+                  v-on:keyup="searchName()"
+                  v-model="nameSearch"
                   type="text"
                   placeholder="Cerca o inizia una nuova chat"
                 />
@@ -62,6 +64,7 @@
             <div
               class="chats"
               v-for="(name, index) in contacts"
+              v-if="(name.visible == true)"
               @click="userSelect(index)"
             >
               <div class="left-chats-part">
