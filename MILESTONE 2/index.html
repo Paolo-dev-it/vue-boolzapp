@@ -1,15 +1,145 @@
-<div class="text-area">
-  <div
-    v-for="(element, index) in contacts[currentUser].messages"
-    :class="(element.status == 'sent') ? 'messageSent' : 'messageReceived'"
-    class=""
-  >
-    <div
-      :class="(element.status == 'sent') ? 'messageSentStyle' : 'messageReceivedStyle'"
-      class=""
-    >
-      {{element.message}}
-      <div class="time-message">12:00</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolzap</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="container">
+        <div class="content-container">
+          <div class="left-part">
+            <!-- Sezione mio profilo -->
+            <div class="my-profile">
+              <div class="my-profile-left-part">
+                <img
+                  src="./assets/img/avatar_io.jpg"
+                  alt="My profile picture"
+                  class="my-profile-pic"
+                />
+                <span>Elisa</span>
+              </div>
+              <div class="my-profile-right-part">
+                <i class="fa-solid fa-circle-notch"></i>
+                <i class="fa-solid fa-message"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+            <!-- Sezione notifiche -->
+            <div class="notice">
+              <div class="bell">
+                <i class="fa-solid fa-bell-slash"></i>
+              </div>
+              <div>
+                <span>Ricevi notifiche di nuovi messaggi</span>
+                <div><a href="#">Attiva notifiche desktop</a></div>
+              </div>
+            </div>
+            <!-- Sezione filtra nomi -->
+            <div class="search-profile">
+              <div class="icon-lens">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <div class="input-search">
+                <input
+                  type="text"
+                  placeholder="Cerca o inizia una nuova chat"
+                />
+              </div>
+            </div>
+            <!-- Sezione mie chats -->
+            <div
+              class="chats"
+              v-for="(name, index) in contacts"
+              @click="userSelect(index)"
+            >
+              <div class="left-chats-part">
+                <img
+                  :src="'./assets/img/avatar' + contacts[index].avatar "
+                  alt="My profile picture"
+                  class="profile-pic-contacts"
+                />
+                <div class="left-chats-part-name">
+                  <span>{{contacts[index].name}}</span>
+                  <div>{{name.messages[name.messages.length - 1].message}}</div>
+                </div>
+              </div>
+              <div>
+                <span>12:00</span>
+              </div>
+            </div>
+          </div>
+          <div class="right-part">
+            <!-- Sezione chat aperta -->
+            <div class="description">
+              <div class="left-part-description">
+                <img
+                  :src="'./assets/img/avatar' + contacts[currentUser].avatar"
+                  alt="My profile picture"
+                  class="profile-pic-contacts"
+                />
+                <div>
+                  <span>{{contacts[currentUser].name}}</span>
+                  <div>Ultimo accesso oggi alle 12:00</div>
+                </div>
+              </div>
+              <div class="left-part-description">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-paperclip"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+            <!-- Sezione messaggi -->
+            <div class="text-area">
+              <div
+                v-for="(element, index) in contacts[currentUser].messages"
+                :class="(element.status == 'sent') ? 'messageSent' : 'messageReceived'"
+                class=""
+              >
+                <div
+                  :class="(element.status == 'sent') ? 'messageSentStyle' : 'messageReceivedStyle'"
+                  class=""
+                >
+                  {{element.message}}
+                  <div class="time-message">12:00</div>
+                </div>
+              </div>
+            </div>
+            <!-- Sezione invio messaggio -->
+            <div class="new-message">
+              <div>
+                <i class="fa-regular fa-face-smile"></i>
+              </div>
+              <div>
+                <input
+                  v-model="text"
+                  v-on:keyup.enter="newMessage"
+                  type="text"
+                  placeholder="Scrivi un messaggio"
+                />
+              </div>
+
+              <i @click="newMessage()" class="fa-solid fa-microphone"></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+
+    <!-- Link Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- My link js -->
+    <script src="./assets/main.js"></script>
+  </body>
+</html>
