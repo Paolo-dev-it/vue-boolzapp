@@ -166,6 +166,7 @@ var app = new Vue({
     ],
     currentUser: 0,
     text: "",
+    pcText: "",
   },
 
   methods: {
@@ -177,6 +178,15 @@ var app = new Vue({
       this.contacts[this.currentUser].messages.push({
         message: this.text,
         status: "sent",
+      });
+
+      setTimeout(this.PcMessage, 1000);
+    },
+
+    PcMessage() {
+      this.contacts[this.currentUser].messages.push({
+        message: "Ok",
+        status: "received",
       });
     },
   },
