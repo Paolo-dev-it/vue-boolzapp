@@ -164,8 +164,12 @@ var app = new Vue({
         ],
       },
     ],
+    currentUser: 0,
   },
-  currentUser: 0,
 
-  methods: {},
+  methods: {
+    userSelect(index) {
+      this.index = this.currentUser = index;
+    },
+  },
 });

@@ -62,7 +62,7 @@
             <div
               class="chats"
               v-for="(name, index) in contacts"
-              @click="chatSelector(element, index)"
+              @click="userSelect(index)"
             >
               <div class="left-chats-part">
                 <img
@@ -72,7 +72,7 @@
                 />
                 <div class="left-chats-part-name">
                   <span>{{contacts[index].name}}</span>
-                  <div>Ultimo messaggio inviato</div>
+                  <div>{{name.messages[name.messages.length - 1].message}}</div>
                 </div>
               </div>
               <div>
@@ -85,12 +85,12 @@
             <div class="description">
               <div class="left-part-description">
                 <img
-                  :src="'./assets/img/avatar' + contacts[0].avatar"
+                  :src="'./assets/img/avatar' + contacts[currentUser].avatar"
                   alt="My profile picture"
                   class="profile-pic-contacts"
                 />
                 <div>
-                  <span>{{contacts[0].name}}</span>
+                  <span>{{contacts[currentUser].name}}</span>
                   <div>Ultimo accesso oggi alle 12:00</div>
                 </div>
               </div>
@@ -102,18 +102,17 @@
             </div>
             <!-- Sezione messaggi -->
             <div class="text-area">
-              <div class="message-container">
-                <div class="right-container-msg">
-                  <div class="message-left">
-                    <span>{{contacts[0].messages[0].message}}</span>
-                    <div class="time-message">10:00</div>
-                  </div>
-                </div>
-                <div class="left-container-msg">
-                  <div class="message-right">
-                    <span>{{contacts[0].messages[1].message}}</span>
-                    <div class="time-message">10:00</div>
-                  </div>
+              <div
+                v-for="(element, index) in contacts[currentUser].messages"
+                :class="(element.status == 'sent') ? 'messageSent' : 'messageReceived' "
+                class=""
+              >
+                <div
+                  :class="(element.status == 'sent') ? 'messageSentStyle' : 'messageReceivedStyle' "
+                  class=""
+                >
+                  {{element.message}}
+                  <div class="time-message">12:00</div>
                 </div>
               </div>
             </div>
