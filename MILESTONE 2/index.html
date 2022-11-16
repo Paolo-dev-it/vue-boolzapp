@@ -1,0 +1,15 @@
+<div class="text-area">
+  <div
+    v-for="(element, index) in contacts[currentUser].messages"
+    :class="(element.status == 'sent') ? 'messageSent' : 'messageReceived'"
+    class=""
+  >
+    <div
+      :class="(element.status == 'sent') ? 'messageSentStyle' : 'messageReceivedStyle'"
+      class=""
+    >
+      {{element.message}}
+      <div class="time-message">12:00</div>
+    </div>
+  </div>
+</div>

@@ -172,12 +172,5 @@ var app = new Vue({
     userSelect(index) {
       this.index = this.currentUser = index;
     },
-
-    newMessage() {
-      this.messages.push({
-        message: this.text,
-        status: "sent",
-      });
-    },
   },
 });
