@@ -55,6 +55,10 @@ body {
   padding: 15px;
 }
 
+.notice-container {
+  margin-left: 20px;
+}
+
 .search-profile {
   width: 100%;
   background-color: white;
@@ -99,7 +103,7 @@ body {
   padding: 15px;
   background-color: lightgray;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -118,12 +122,35 @@ body {
   border-radius: 50%;
 }
 
+.left-chats-part-name {
+  margin-left: 15px;
+}
+
+.left-chats-part-name > div {
+  color: lightgray;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.time {
+  color: lightgray;
+  font-size: 0.7rem;
+}
+
 .my-profile-right-part {
   color: gray;
 }
 
-.fa-solid {
+.fa-solid,
+.fa-regular {
   margin: 5px;
+  color: grey;
+}
+
+.last-access > div {
+  color: gray;
+  font-size: 0.7rem;
+  margin-top: 8px;
 }
 
 .bell {
@@ -175,7 +202,8 @@ body {
 
 .time-message {
   text-align: right;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
+  color: gray;
 }
 
 .new-message input {

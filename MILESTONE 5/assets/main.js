@@ -176,12 +176,16 @@ var app = new Vue({
     },
 
     newMessage() {
-      this.contacts[this.currentUser].messages.push({
-        message: this.text,
-        status: "sent",
-      });
+      if (this.text == "") {
+      } else {
+        this.contacts[this.currentUser].messages.push({
+          message: this.text,
+          status: "sent",
+        });
+        setTimeout(this.PcMessage, 1000);
+      }
 
-      setTimeout(this.PcMessage, 1000);
+      this.text = "";
     },
 
     PcMessage() {
