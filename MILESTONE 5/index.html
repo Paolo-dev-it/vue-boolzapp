@@ -79,7 +79,7 @@
                 </div>
               </div>
               <div>
-                <span class="time">12:00</span>
+                <span class="time">{{getLastHourContact(name)}}</span>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@
                 />
                 <div class="last-access">
                   <span>{{contacts[currentUser].name}}</span>
-                  <div>Ultimo accesso oggi alle 12:00</div>
+                  <div>Ultimo accesso oggi alle {{actualTime()}}</div>
                 </div>
               </div>
               <div class="left-part-description">
@@ -113,7 +113,9 @@
                   :class="(element.status == 'sent') ? 'messageSentStyle' : 'messageReceivedStyle'"
                 >
                   {{element.message}}
-                  <div class="time-message">12:00</div>
+                  <div class="time-message">
+                    {{getLastHourMessage(element)}}
+                  </div>
                 </div>
               </div>
             </div>
@@ -137,6 +139,9 @@
         </div>
       </div>
     </div>
+
+    <!-- CDN example (jsDelivr) -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 
     <!-- Link Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

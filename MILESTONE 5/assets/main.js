@@ -178,7 +178,14 @@ var app = new Vue({
     newMessage() {
       if (this.text == "") {
       } else {
-        this.contacts[this.currentUser].messages.push({
+        let messageOfContact = this.contacts[this.currentUser].messages;
+        const d = new Date();
+        let time = d.toLocaleTimeString();
+        let date = d.toLocaleTimeString();
+
+        let now = `${date} ${time}`;
+        messageOfContact.push({
+          date: now,
           message: this.text,
           status: "sent",
         });
@@ -189,7 +196,14 @@ var app = new Vue({
     },
 
     PcMessage() {
-      this.contacts[this.currentUser].messages.push({
+      let messageOfContact = this.contacts[this.currentUser].messages;
+      const d = new Date();
+      let time = d.toLocaleTimeString();
+      let date = d.toLocaleTimeString();
+
+      let now = `${date} ${time}`;
+      messageOfContact.push({
+        date: now,
         message: "Ok",
         status: "received",
       });
@@ -212,5 +226,27 @@ var app = new Vue({
         }
       });
     },
+
+    getLastHourContact(name) {
+      let lastDate = name.messages[name.messages.length - 1].date;
+      lastDate = lastDate.split(" ");
+      return lastDate[1];
+    },
+
+    getLastHourMessage(element) {
+      let date = element.date;
+      date = date.split(" ");
+      return date[1];
+    },
+
+    actualTime() {
+      let today = new Date();
+      var time =
+        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      time = time.slice(0, 5);
+      return time;
+    },
   },
 });
+
+//var now = dayjs().format("H:mm");
