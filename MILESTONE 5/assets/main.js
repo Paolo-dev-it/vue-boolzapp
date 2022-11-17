@@ -170,10 +170,14 @@ var app = new Vue({
     nameSearch: "",
   },
 
+  //Funzione che mi permette di selezionare i vari utenti dalla chat
+
   methods: {
     userSelect(index) {
       this.index = this.currentUser = index;
     },
+
+    //Funzione che mi permette di scrivere un messaggio
 
     newMessage() {
       if (this.text == "") {
@@ -195,6 +199,8 @@ var app = new Vue({
       this.text = "";
     },
 
+    //Funzione che crea il messaggio automatico del pc ogni 1 secondo
+
     PcMessage() {
       let messageOfContact = this.contacts[this.currentUser].messages;
       const d = new Date();
@@ -202,12 +208,15 @@ var app = new Vue({
       let date = d.toLocaleTimeString();
 
       let now = `${date} ${time}`;
+
       messageOfContact.push({
         date: now,
         message: "Ok",
         status: "received",
       });
     },
+
+    //Funzione che filtra i nomi in base alle lettere che inseriamo
 
     searchName() {
       this.contacts.forEach((element, index) => {
@@ -227,15 +236,19 @@ var app = new Vue({
       });
     },
 
+    //Funzioni che danno l'ora in tempo reale
+
     getLastHourContact(name) {
       let lastDate = name.messages[name.messages.length - 1].date;
       lastDate = lastDate.split(" ");
+      lastDate = lastDate.slice(0, 5);
       return lastDate[1];
     },
 
     getLastHourMessage(element) {
       let date = element.date;
       date = date.split(" ");
+
       return date[1];
     },
 
